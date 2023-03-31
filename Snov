@@ -1,0 +1,79 @@
+public class fakt{
+    public static int faktIte(int n){
+        int i=1;
+        int rez=1;
+        while(i<=n){
+            rez=i*rez;
+            i++;
+        }
+        return rez;
+    }
+    public static int faktRek(int n){
+        if(n==0)
+        {
+            return 1;
+        }
+        else
+        {
+            return n*faktRek(n-1);
+        }
+    }
+    public static void main(String[] args) {
+        System.out.println(faktIte(6));
+        System.out.println(faktRek(6));
+    }
+}
+
+public class fib {
+    public static int fibIte(int n){
+        int a=0, b=1;
+        int c;
+        for(int i=2;i<=n;i++)
+        {
+            c=b;  //začasno shranimo zadnje Fibonaccijevo število
+            b=b+a;   //naslednje Fib. število
+            a=c;   //prejšnje Fib. število
+        }
+        return b;
+    }
+    public static int fibRek(int n){
+        if(n<=1)
+        {
+            return n;
+        }
+        return fibRek(n-1)+fibRek(n-2);
+    }
+    public static void main(String[] args) {
+        System.out.println("Fib. iterativno: "+fibIte(10));
+        System.out.println("Fib. rekurzivno: "+fibRek(10));
+    }
+}
+
+public class Vaja {
+    //izdelaj rekurzivno metodo za izračun produkta dveh števil
+    public static int produkt(int a,int b){
+        if(b==0)
+        {
+            return 0;
+        }
+        else
+        {
+            return produkt(a,b-1)+a;
+        }
+    }
+    //izdelaj rekurzivno metodo za izračun količnika dveh števil - a>b
+    public static int kolicnik(int a, int b){
+        if(a<b)
+        {
+            return 0;
+        }
+        else
+        {
+            return kolicnik(a-b,b)+1;
+        }
+    }
+    public static void main(String[] args) {
+        System.out.println("Produkt: "+produkt(5,5));
+        System.out.println("Količnik: "+kolicnik(15,5));
+    }
+}
