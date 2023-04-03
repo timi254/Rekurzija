@@ -77,3 +77,46 @@ public class Vaja {
         System.out.println("Količnik: "+kolicnik(15,5));
     }
 }
+
+public class Vaja {
+    public static int razlika(int a, int b){
+        if(a==b)
+        {
+            return 0;
+        }
+        else
+        {
+            return razlika(a-1,b)+1;
+        }
+    }
+    public static int vsota(int a, int b){
+        if(a==0)
+        {
+            return b;
+        }
+        else
+        {
+            return vsota(a-1,b)+1;
+        }
+    }
+    public static void hanoi(int n, char a, char b, char c){
+        if(n==1)
+        {
+            System.out.println("Prestavi obroc s palice "+a+" na palico "+c);
+        }
+        else
+        {
+            hanoi(n-1,a,c,b);
+            hanoi(1,a,b,c);
+            hanoi(n-1,b,a,c);
+        }
+    }
+    public static void main(String[] args) {
+        //izdelaj rekurzivno metodo ki izračuna razliko dveh števil
+        System.out.println(razlika(9, 4));
+        //izdelaj rekurzivno metodo ki izračuna vsoto dveh števil
+        System.out.println(vsota(10, 4));
+        //hanoiski stolpiči
+        hanoi(4, 'A', 'B', 'C');
+    }
+}
