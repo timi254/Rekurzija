@@ -1,0 +1,15 @@
+public class Naloga1{
+    public static int fakulteta(int n){
+        if(n==0)
+        {
+            return 1;
+        }
+        else
+        {
+            return n*fakulteta(n-1);
+        }
+    }
+    public static void main(String[] args) {
+       System.out.println(fakulteta(5));
+    }
+}
