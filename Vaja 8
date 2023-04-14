@@ -1,0 +1,23 @@
+public class Naloga8 {
+    public static int zap(int n){
+        int a=5;
+        int vs=0;
+        int b=5;
+        if(n==1)
+        {
+            return 5;
+        }
+        else
+        {
+            for(int i=1;i<n;i++)
+            {
+                vs=a*b;
+                b=vs;
+            }
+        }
+        return vs;
+    }
+    public static void main(String[] args) {
+        System.out.println(zap(5));
+    }
+}
